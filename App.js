@@ -15,6 +15,11 @@ import RankUK from './components/RankUK';
 import RankKorea from './components/RankKorea';
 import RankChina from './components/RankChina';
 
+import Dsplaylist from './components/playlist/inplaylist'
+import Playlist from './components/playlist/Playlist'
+import List from './components/playlist/list'
+import AppPlay from './components/playlist/AppPlay'
+
 // Create function of Rank for transmission navigation
 function MusicChartComponent({navigation}) {
   return <Rank nav={navigation}></Rank>;
@@ -22,7 +27,27 @@ function MusicChartComponent({navigation}) {
 
 // Create function of OnMusic ( play music ) for transmission navigation
 function PlaylistComponent({ route, navigation }) {
-  return <OnMusic nav={navigation} route={route}></OnMusic>;
+  return <Playlist nav={navigation} route={route}></Playlist>;
+}
+
+function DSPlaylistComponent({ route, navigation }) {
+  return <Dsplaylist nav={navigation} route={route}></Dsplaylist>;
+}
+
+const StackPlaylist = createStackNavigator();
+
+function PlaylistStack() {
+  return (
+    <StackPlaylist.Navigator>
+      <StackPlaylist.Screen
+        options={{ headerShown: false }}
+        name="Playlist"
+        component={PlaylistComponent}></StackPlaylist.Screen>
+      <StackPlaylist.Screen
+        name="Play"
+        component={DSPlaylistComponent}></StackPlaylist.Screen>
+    </StackPlaylist.Navigator>
+  );
 }
 
 // Create stack in a component ( from Rank to playmusic )
@@ -113,6 +138,7 @@ export default class App extends Component {
           {/* add direct Personal and Discover, not navigation child :v */}
           <Tab.Screen name="Personal" component={Personal}></Tab.Screen>
           <Tab.Screen name="Discover" component={Discover}></Tab.Screen>
+          <Tab.Screen name="Playlist" component={PlaylistStack}></Tab.Screen>
           
           {/* add stack for transmission with components Rank and playmusic */}
           <Tab.Screen

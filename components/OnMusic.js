@@ -63,9 +63,7 @@ class OnMusic extends Component {
     }
     
 
-    componentDidMount() {
-      // this.getMusic();
-      // this.handlePress();
+    componentDidMount = () => {
       this.handlePress()
     }
 

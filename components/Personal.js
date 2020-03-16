@@ -41,9 +41,11 @@ class Personal extends Component {
                             lightTheme={true}
                             inputContainerStyle={{
                                 borderRadius: 200,
+                                height: 35
                             }}
                             containerStyle={{
                                 borderRadius: 200,
+                                height: 50
                             }}
                         />
                     </View>

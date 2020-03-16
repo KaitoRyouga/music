@@ -134,9 +134,9 @@ export default class Rank extends Component {
     }
   }
 
-  componentDidMount() {
+  // componentDidMount() {
       // this.getData();
-  }
+  // }
 
   mergeFun = () => {  
     dataRank.forEach((value, index) => {
