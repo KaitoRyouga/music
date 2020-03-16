@@ -9,9 +9,6 @@ import 'react-native-gesture-handler';
 
 class HidenView extends Component {
     render() {
-        if (this.props.hide) {
-            return null
-        }
         return (
             <View style={{
                 width: '100%'

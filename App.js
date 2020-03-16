@@ -26,12 +26,16 @@ function MusicChartComponent({navigation}) {
 }
 
 // Create function of OnMusic ( play music ) for transmission navigation
-function PlaylistComponent({ route, navigation }) {
-  return <Playlist nav={navigation} route={route}></Playlist>;
+function OnMusicComponent({ route, navigation }) {
+  return <OnMusic nav={navigation} route={route}></OnMusic>;
 }
 
 function DSPlaylistComponent({ route, navigation }) {
   return <Dsplaylist nav={navigation} route={route}></Dsplaylist>;
+}
+
+function PlaylistComponent({ route, navigation }) {
+  return <Playlist nav={navigation} route={route}></Playlist>;
 }
 
 const StackPlaylist = createStackNavigator();
@@ -44,7 +48,7 @@ function PlaylistStack() {
         name="Playlist"
         component={PlaylistComponent}></StackPlaylist.Screen>
       <StackPlaylist.Screen
-        name="Play"
+        name="DSPlay"
         component={DSPlaylistComponent}></StackPlaylist.Screen>
     </StackPlaylist.Navigator>
   );
@@ -62,7 +66,7 @@ function MusicChartStack() {
           component={RankComponent}></StackChart.Screen>
         <StackChart.Screen
           name="Play"
-          component={PlaylistComponent}></StackChart.Screen>
+          component={OnMusicComponent}></StackChart.Screen>
       </StackChart.Navigator>
     );
 }

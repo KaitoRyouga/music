@@ -6,9 +6,12 @@ import{
 Icon, SearchBar
 } from 'react-native-elements'
 import List from './list'
+import uuid from 'react-native-uuid';
+
 export default class Playlist extends Component{
   state = {
     search: '',
+    namePlaylist: ["Kaito", "Ryouga", "Đăng ML"]
   };
 
   updateSearch = search => {
@@ -56,26 +59,19 @@ export default class Playlist extends Component{
             </View>
             <View style={styles.container4}>
               <ScrollView>
-                  <TouchableOpacity onPress={
-              () => this.props.nav.navigate("Play")
-                  }>
-                    <List></List>
-                  </TouchableOpacity>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-                  <List></List>
-
+                  {
+              this.state.namePlaylist.map((name, index) => {
+                      return(
+                        <View key={index}>
+                          <TouchableOpacity onPress={
+                            () => this.props.nav.navigate("DSPlay", { dataPlaylistMusic: name })
+                          }>
+                            <List name={name}></List>
+                          </TouchableOpacity>
+                        </View>
+                      )
+                    })
+                  }
               </ScrollView>
             </View>
 

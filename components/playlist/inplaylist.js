@@ -5,10 +5,12 @@ View, ScrollView, TouchableOpacity, Text,Image
 import{
 Icon
 } from 'react-native-elements'
-import List from './list'
+import ListMusic from './ListMusic'
 import{
 SliderBox
 } from 'react-native-image-slider-box'
+import Kaito from '../../data/dataPlaylist'
+
 export default class Dsplaylist extends Component{
   constructor(props) {
     super(props);
@@ -20,7 +22,14 @@ export default class Dsplaylist extends Component{
       ]
     };
   }
+  componentDidMount(){
+    var { dataPlaylistMusic } = this.props.route.params;
+
+    // console.log(dataPlaylistMusic)
+  }
   render(){
+    var dataCurrent = Kaito
+    console.log(dataCurrent)
     return(
       <View style={{flex: 1, flexDirection: 'column'}}>
         {/* <View style={{flex: 1, flexDirection: 'row'}}>
@@ -76,14 +85,19 @@ export default class Dsplaylist extends Component{
                 </View>
                 <View style={{ flex: 6, flexDirection: 'column'}}>
                         <ScrollView>
+                          {
+                              dataCurrent.map((item, index) => {
+                              return <ListMusic key={index} dataMusic={item}></ListMusic>
+                            })
+                          }
+                           {/* <ListMusic></ListMusic> */}
+                           {/* <ListMusic></ListMusic> */}
+                           {/* <List></List>
                            <List></List>
                            <List></List>
                            <List></List>
                            <List></List>
-                           <List></List>
-                           <List></List>
-                           <List></List>
-                           <List></List>
+                           <List></List> */}
                          </ScrollView> 
 
                 </View>

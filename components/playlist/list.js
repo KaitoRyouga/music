@@ -19,7 +19,7 @@ export default class List extends Component{
                         </View>
                         <View style={{ flex: 8, justifyContent: 'center'}}>
                                 <Text style={{fontSize: 20}}>
-                                    Playlist
+                                    {this.props.name}
                                 </Text>
                         </View>
                         <View style={{flex: 1}}>

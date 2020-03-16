@@ -12,29 +12,29 @@ import RNFS from 'react-native-fs'
 import uuid from 'react-native-uuid';
 import {useRoute} from '@react-navigation/native';
 
-var data = [
-  {
-    id: 'trackId test',
-    url: require('../music/pew.m4a'),
-    title: 'Track Title',
-    artist: 'Track Artist',
-    artwork: require('../images/avatar.jpg'),
-  },
-  {
-    id: 'trackId test2',
-    url: require('../music/track2.m4a'),
-    title: 'Track Title2',
-    artist: 'Track Artist2',
-    artwork: require('../images/avatar.jpg'),
-  },
-  {
-    id: 'trackId test3',
-    url: require('../music/atn.m4a'),
-    title: 'Track Title3',
-    artist: 'Track Artist4',
-    artwork: require('../images/avatar.jpg'),
-  },
-];
+// var data = [
+//   {
+//     id: 'trackId test',
+//     url: require('../music/pew.m4a'),
+//     title: 'Track Title',
+//     artist: 'Track Artist',
+//     artwork: require('../images/avatar.jpg'),
+//   },
+//   {
+//     id: 'trackId test2',
+//     url: require('../music/track2.m4a'),
+//     title: 'Track Title2',
+//     artist: 'Track Artist2',
+//     artwork: require('../images/avatar.jpg'),
+//   },
+//   {
+//     id: 'trackId test3',
+//     url: require('../music/atn.m4a'),
+//     title: 'Track Title3',
+//     artist: 'Track Artist4',
+//     artwork: require('../images/avatar.jpg'),
+//   },
+// ];
 
 var typeEx = ['mp3', 'm4a']
 
@@ -90,7 +90,7 @@ class OnMusic extends Component {
       // let dataAdd = this.getMusic();
       // console.log(dataAdd)
 
-    // console.log(dataAddRaw)
+    console.log(dataTransfer)
     const searchUrl = `https://chiasenhac.vn${dataTransfer.link}` ;
     const response = await fetch(searchUrl); // fetch page
 
@@ -117,7 +117,7 @@ class OnMusic extends Component {
     this.setState({dataAddDownload: dataAdd});
 
     // console.log(dataAdd)
-    // console.log(searchUrl)
+    console.log(dataAdd)
         TrackPlayer.setupPlayer().then(async () => {
             await TrackPlayer.add(dataAdd);
         })

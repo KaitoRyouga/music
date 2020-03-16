@@ -80,7 +80,9 @@ class Personal extends Component {
                                 icon="playlist-play"
                                 avatarMusic={true}></PersonalContentLibrary>
                         </View>
-                        <HidenView hide={this.state.moreAndCollapse}></HidenView>
+                        <View style={this.state.moreAndCollapse && styles.hidden}>
+                            <HidenView></HidenView>
+                        </View>
                     </View>
                     <TouchableOpacity
                         style={{
@@ -90,7 +92,8 @@ class Personal extends Component {
                             marginTop: 20,
                             width: '100%',
                         }}
-                        onPress={() => this.changeColorMore()}>
+                        onPress={() => this.changeColorMore()}
+                        >
                         <Text
                             style={{
                                 color: '#a00ca0',
@@ -175,4 +178,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 10
     },
+    hidden: {
+        display: 'none'
+    }
 })
