@@ -21,7 +21,7 @@ export default class Playlist extends Component{
     const { search } = this.state;
     return(
       <View style ={styles.container}>
-            <View style={styles.container1}>
+            {/* <View style={styles.container1}>
               <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <TouchableOpacity onPress={this._onPressButton}>
                 <Icon name='left' type='antdesign'/>
@@ -32,7 +32,7 @@ export default class Playlist extends Component{
                   PLAYLIST
                 </Text>
               </View>
-            </View>
+            </View> */}
             <View style={styles.container2}>
                 <View style={{flex: 9, justifyContent: 'center', alignItems: 'center', paddingTop: 5, paddingBottom: 5 }}>
                 <SearchBar

@@ -23,7 +23,7 @@ export default class Dsplaylist extends Component{
   render(){
     return(
       <View style={{flex: 1, flexDirection: 'column'}}>
-        <View style={{flex: 1, flexDirection: 'row'}}>
+        {/* <View style={{flex: 1, flexDirection: 'row'}}>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <Icon name='left' type ='antdesign'/>
             </View>
@@ -40,7 +40,7 @@ export default class Dsplaylist extends Component{
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <Icon name='dots-three-vertical' type ='entypo'/>
             </View>
-        </View>
+        </View> */}
         <View style={{flex: 13}}>
               <ScrollView contentContainerStyle={{flex: 1, flexDirection: 'column'}}>
                 <View style={{flex :4}}>
